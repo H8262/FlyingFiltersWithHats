@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/five"
+        android:title="Fedora"/>
+    <item
+        android:id="@+id/six"
+        android:title="Cop"/>
+    <item
+        android:id="@+id/seven"
+        android:title="Christmas"/>
+    <item
+        android:id="@+id/eight"
+        android:title="Sunhat"/>
+    <item
+        android:id="@+id/nohat"
+        android:title="None"/>
+
+</menu>

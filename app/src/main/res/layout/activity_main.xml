@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+
+    tools:context="fi.jamk.filtteri2.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/lay"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="centerInside"/>
+
+        <ImageView
+            android:id="@+id/hat1"
+            android:src="@drawable/hat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="matrix"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="260dp"
+            />
+        <ImageView
+            android:id="@+id/hat2"
+            android:src="@drawable/hat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="matrix"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="260dp"
+            />
+        <ImageView
+            android:id="@+id/hat3"
+            android:src="@drawable/hat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="matrix"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="260dp"
+            />
+        <ImageView
+            android:id="@+id/hat4"
+            android:src="@drawable/hat4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="matrix"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="260dp"
+            />
+
+        <ImageView
+            android:id="@+id/imageFilter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/imageBorder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+
+
+    </RelativeLayout>
+
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/b_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FILTERS"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/b_popup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HATS"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/b_popup" />
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/b_popup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BORDERS"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/b_popup2" />
+
+    <Button
+        android:id="@+id/b_ready"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="READY"
+        android:layout_toRightOf="@id/b_popup3"/>
+
+    <Button
+        android:id="@+id/b_reset"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET HAT POSITION"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/b_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHARE"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/b_save" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/b_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="42dp" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/b_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDIT"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="43dp" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/b_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/b_back"
+        android:layout_alignTop="@+id/b_popup"
+        android:text="START AGAIN" />
+
+</RelativeLayout>
