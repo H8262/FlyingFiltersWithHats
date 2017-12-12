@@ -111,6 +111,7 @@ public class start extends AppCompatActivity {
             intent.putExtra("id","LOAD");
             intent.putExtra("picture", picturePath);
             startActivity(intent);
+            finish();
 
         }
 
@@ -124,9 +125,7 @@ public class start extends AppCompatActivity {
             intent.putExtra("imagePath", imageUri.toString());
             startActivity(intent);
 
-
         }
-        //loppuu,
     }
     public String fileName(){ //tämä luo uniikin tiedostonnimen ajan mukaan...
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
