@@ -74,12 +74,9 @@ public class MainActivity extends AppCompatActivity {
     private int _xDelta;
     private int _yDelta;
 
-    Drawable drawable;
-    Bitmap bitmap;
     Bitmap kuva;
     Integer imageHeight = 0;
     Integer imageWidth = 0;
-    Uri bitmapUri;
 
     Drawable scaled;
     Drawable unscaled;
@@ -239,9 +236,6 @@ public class MainActivity extends AppCompatActivity {
             imageView.setImageBitmap(kuva);
 
         }
-
-
-
 
         b_popup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -488,6 +482,7 @@ public class MainActivity extends AppCompatActivity {
                 View content = findViewById(R.id.lay);
                 Bitmap bitmap = getScreenShot(content);
                 currentImage = "Flying-" + fileName() + ".jpg";
+                store2(bitmap, currentImage);
                 store(bitmap, currentImage);
 
                 b_restart.setVisibility(View.VISIBLE);
@@ -505,6 +500,7 @@ public class MainActivity extends AppCompatActivity {
         b_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 shareImage(currentImage);
                 buttonsound4.start();
 
@@ -571,6 +567,9 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this,start.class);
                 startActivity(intent);
+                finishAffinity();
+
+
             }
         });
     }
@@ -665,9 +664,30 @@ public class MainActivity extends AppCompatActivity {
         MediaStore.Images.Media.insertImage(getContentResolver(), bm,fileName, "Made with Flying Filters");
         Toast.makeText(this, "Saved as " + fileName, Toast.LENGTH_SHORT).show();
     }
+    private void store2(Bitmap bm, String fileName){
+
+        // Käyttämällä toista tallennustapaa, kuvan jako ei onnistu
+
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/FILTTERIKUVAT";
+        File dir = new File(dirPath);
+        if(!dir.exists()){
+            dir.mkdirs();
+
+        }
+        File file = new File(dirPath, fileName);
+        try{
+            FileOutputStream fos = new FileOutputStream(file);
+            bm.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     // sharing the image
-    private void shareImage(String fileName){
+    private void shareImage(String fileName) {
+
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/FILTTERIKUVAT";
         Uri uri = Uri.fromFile(new File(dirPath, fileName));
         Intent intent = new Intent();

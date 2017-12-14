@@ -111,7 +111,6 @@ public class start extends AppCompatActivity {
             intent.putExtra("id","LOAD");
             intent.putExtra("picture", picturePath);
             startActivity(intent);
-            finish();
 
         }
 
